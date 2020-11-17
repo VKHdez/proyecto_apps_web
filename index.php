@@ -19,6 +19,6 @@
     <title>INTERNAUTA</title>
 </head>
 <body>
-    <?php require('controller/general_controller/c_menu.php'); echo "hola, esto es una edición de prueba";?>
+    <?php require('controller/general_controller/c_menu.php'); echo "hola, ESTO ES UNA EDICION DESDE SSH";?>
 </body>
 </html>
