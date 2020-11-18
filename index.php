@@ -18,6 +18,6 @@
     <title>INTERNAUTA</title>
 </head>
 <body>
-    <?php require('controller/general_controller/c_menu.php'); ?>
+    <?php require('controller/general_controller/c_menu.php'); echo "HOLI, YA MATENME XC";?>
 </body>
 </html>
