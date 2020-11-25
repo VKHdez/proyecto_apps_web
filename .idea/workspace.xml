@@ -20,36 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28f6ee3a-a9e9-460a-83b9-138a4e2b3370" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/accionBuscador.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/vk .jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/comandos-linux.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/comoserhacker.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/grafos.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/compress.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/hash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/scissor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/scissor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/turn.html4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/turn.html4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/turn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/turn.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/zoom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/lib/zoom.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/general_view/css/searchBar_styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/general_view/css/tabla_styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apuntes.php" beforeDir="false" afterPath="$PROJECT_DIR$/apuntes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexAlumno.php" beforeDir="false" afterPath="$PROJECT_DIR$/indexAlumno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listarApuntes.php" beforeDir="false" afterPath="$PROJECT_DIR$/listarApuntes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfilAlumno.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfilAlumno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scriptApuntesdb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scriptApuntesdb.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/verApunte.php" beforeDir="false" afterPath="$PROJECT_DIR$/verApunte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verResumen.php" beforeDir="false" afterPath="$PROJECT_DIR$/verResumen.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +65,7 @@
       <workItem from="1606003919596" duration="821000" />
       <workItem from="1606004830308" duration="829000" />
       <workItem from="1606184518066" duration="399000" />
-      <workItem from="1606252334584" duration="33363000" />
+      <workItem from="1606252334584" duration="34210000" />
     </task>
     <servers />
   </component>

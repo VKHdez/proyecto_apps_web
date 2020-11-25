@@ -76,9 +76,7 @@ agregado lo de abajo php
     mysqli_select_db($link,"apuntesdb");
 
     //  Cargar información completa del Apunte
-    $result=mysqli_query($link,"select * from apuntes");
-
-
+    $result=mysqli_query($link,"select * from apuntes WHERE id_apuntes='".$_GET['id']."'");
 
     while($row = mysqli_fetch_array($result))
     {
