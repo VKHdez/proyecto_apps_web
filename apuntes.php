@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="scss/skin.css">
+    <link rel="stylesheet" href="view/general_view/css/tabla_styles.css">
+    <link rel="stylesheet" href="view/general_view/css/searchBar_styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -17,45 +19,32 @@
 
 <body id="wrapper">
 	<?PHP session_start(); ?>
-    <section id="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-7 col-xs-7 top-header-links">
-                    <ul class="contact_links">
-                        <li><i class="fa fa-phone"></i><a href="#">APLICACIONES WEB</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="#"> BUAP</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5 social">
-
-                </div>
-            </div>
-        </div>
-        </div>
-
-    </section>
-
     <header>
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="row">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    				<span class="sr-only">Toggle navigation</span>
-                    				<span class="icon-bar"></span>
-                    				<span class="icon-bar"></span>
-                    				<span class="icon-bar"></span>
-                			  </button>
-                        <a class="navbar-brand" href="#">
+
+                        <a class="navbar-brand" href="apuntes.php">
                         <h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="indexAlumno.php">INICIO</a></li>
                             <li class="active"><a href="#">Apuntes</a></li>
-                            <li><a href="perfilAlumno.php">Perfil</a></li>
-							              <li><a href="contact.php">Contacto</a></li>
-                            <li><a href="salir.php">Salir</a></li>
+
+                            <?php
+
+                                if( isset($_SESSION['usuario']) ){
+                                    echo "<li><a href='perfilAlumno.php'>Perfil</a></li>
+							            <li><a href='contact.php'>Contacto</a></li>
+                                        <li><a href='salir.php'>Salir</a></li>";
+                                }else{
+                                    echo "<li><a href='login.php''>Iniciar Sesion</a></li>
+                                          <li><a href='registration.php'>Registrarse</a></li>";
+                                }
+
+                            ?>
+
                         </ul>
                     </div>
                 </div>
@@ -63,103 +52,52 @@
         </nav>
     </header>
 
-    <div id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Left and right controls -->
-
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-        </a>
-
-    </div>
-
-
 	<section id="top_banner">
         <div class="banner">
-            <div class="inner text-center">
-                <h2>Alumno: <?php echo $_SESSION["usuario"]; ?></h2>
-            </div>
+            <form class="form-buscador" action="accionBuscador.php" method="POST">
+                <input class="barra_busqueda" name="busqueda" type="text" placeholder="Busca un Documento...">
+                <input class="boton_buscar" type="submit" value="Buscar">
+            </form>
         </div>
     </section>
 	<!--
 //*************************************************************************************************
 agregado lo de abajo php
 //*****************************************************************************************************
--->
-<?PHP
-    //mostrar taba con los apuntes en la base de datos
-    $link=mysqli_connect("localhost","root","");
-    mysqli_select_db($link,"apuntesdb");
-    $result=mysqli_query($link,"select * from apuntes");
-    echo "<table border=1>";
-    echo "<TR><td> Id Apunte </td><td> Materia </td><td> Titulo </td><td> Autor </td><td> Archivo </td></TR>";
-    while($row = mysqli_fetch_array($result))
-    {
-       $id=$row['id_apuntes'];
-       $materia=$row['materia'];
-       $titulo=$row['titulo'];
-       $autor=$row['autor'];
-       echo "<TR><td> $id </td><td> $materia </td><td> $titulo </td> <td> $autor </td><td>
-       <a href=\"verApunte.php?id=%s\"><img src='actualiza.jpg' width='25' height='25' border='0'></a></td></TR>";
+ -->
 
-    }
-    mysqli_free_result($result);
-    mysqli_close($link);
-    echo "</table>";
-?>
+    <section class="apuntes-container">
+        <?PHP
+            //mostrar taba con los apuntes en la base de datos
+            $link=mysqli_connect("localhost","root","");
+            mysqli_select_db($link,"apuntesdb");
+            $result=mysqli_query($link,"select * from apuntes");
+            echo "<table class='tabla-apuntes'>";
+            echo "<tr><th> Materia </th><th> Titulo </th><th> Autor </th><th> Archivo </th></tr>";
+            while($row = mysqli_fetch_array($result))
+            {
+                $id      =$row['id_apuntes'];
+                $materia =$row['materia'];
+                $titulo  =$row['titulo'];
+                $autor   =$row['autor'];
+                echo "<tr><td> $materia </td><td> $titulo </td> <td> $autor </td> <td><a class='nota_boton' href='verResumen.php?id=".$id."'>VER NOTA</a></td></tr>";
 
-
-
+            }
+            mysqli_free_result($result);
+            mysqli_close($link);
+            echo "</table>";
+        ?>
+    </section>
 
     <section id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-12 block">
                     <div class="footer-block">
-                        <h4>Nos ubicamos en</h4>
-                        <hr/><p>BUAP "La guardida de lobos".</p>
+                        <h4>Comparte tus conocimientos...</h4>
+                        <hr/><p>Aplicaciones Web - Otoño 2020</p>
                     </div>
                 </div>
             </div>
         </div>
 	</section>
-
-    <section id="bottom-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 btm-footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 copyright">
-                    Developed by <a href="#">Aspire Software Solutions</a> designed by <a href="#">Designing Team</a><p> modificado por Bernardo, Carlos y Victor.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="panel">
-        <div id="panel-admin">
-            <div class="panel-admin-box">
-                <div id="tootlbar_colors">
-                    <button class="color" style="background-color:#1abac8;" onClick="mytheme(0)"></button>
-                    <button class="color" style="background-color:#ff8a00;" onClick="mytheme(1)"> </button>
-                    <button class="color" style="background-color:#b4de50;" onClick="mytheme(2)"> </button>
-                    <button class="color" style="background-color:#e54e53;" onClick="mytheme(3)"> </button>
-                    <button class="color" style="background-color:#1abc9c;" onClick="mytheme(4)"> </button>
-                    <button class="color" style="background-color:#159eee;" onClick="mytheme(5)"> </button>
-                </div>
-            </div>
-
-        </div>
-        <a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>
-    </div>

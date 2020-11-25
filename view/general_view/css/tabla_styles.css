@@ -1,0 +1,124 @@
+
+/*
+    TABLAS DE APUNTES
+*/
+.apuntes-container{
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.tabla-apuntes{
+
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+
+    font-size: 1.1em;
+}
+
+.tabla-apuntes tr th{
+
+    padding: 10px;
+
+    background-color: #dddddd;
+    text-align: center;
+    color: rgba(24,24,24,0.91);
+
+    margin-bottom: 20px;
+}
+
+.tabla-apuntes tr td{
+
+    padding:10px ;
+    text-align: center;
+    color: #333333;
+    border-bottom : 1px solid #dddddd;
+}
+
+.nota_boton{
+
+    padding: 5px 15px;
+
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #4cae4c;
+}
+
+/*
+    TABLAS DE RESUMEN
+*/
+
+.resumen-container{
+
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+}
+
+.datos-resumen{
+
+    flex: auto;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.boton-resumen{
+    background-color: lightblue;
+
+}
+
+.boton-resumen a{
+    color: white;
+    background-color: #0e80c2;
+
+   padding: 15px;
+}
+
+.boton-resumen a:hover{
+    color: lightcyan;
+}
+
+/*
+
+    LIBRO ESTILOS
+
+ */
+
+.libro-container{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#nota{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.controles{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.controles button {
+
+    padding: 5px 15px;
+    border: none;
+    color: whitesmoke;
+    background-color: #1abac8;
+}

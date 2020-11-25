@@ -1,0 +1,28 @@
+.form-buscador{
+    width: 60%;
+
+    margin: 0 auto;
+    display: flex;
+}
+
+.form-buscador > input {
+    padding: 5px;
+}
+
+.boton_buscar {
+    width: 20%;
+
+    color: white;
+    background-color: #0e80c2;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.barra_busqueda{
+    width: 80%;
+
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
