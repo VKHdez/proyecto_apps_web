@@ -163,7 +163,7 @@
                                 <div class="our-team main-info-below-image">
                                     <div class="our-team-inner">
                                         <div class="our-team-image">
-                                            <img src="img/team-4.jpg" />
+                                            <img src="img/jose_carlo.jpeg" />
                                             <div class="qodef-circle-animate"></div>
                                             <div class="our-team-position-icon">
                                                 <span class="qodef-icon-shortcode circle">
@@ -172,7 +172,7 @@
                                         </div>
                                         <div class="our-team-info">
                                             <div class="our-team-title-holder">
-                                                <h5 class="our-team-name">Jose Carlos</h5>
+                                                <h5 class="our-team-name">Jose Carlos Flores Rivera</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@
                                 <div class="our-team main-info-below-image">
                                     <div class="our-team-inner">
                                         <div class="our-team-image">
-                                            <img src="img/team-4.jpg" />
+                                            <img src="img/bernardo.jpeg" />
                                             <div class="qodef-circle-animate"></div>
                                             <div class="our-team-position-icon">
                                                 <span class="qodef-icon-shortcode circle">
@@ -219,7 +219,7 @@
                                         </div>
                                         <div class="our-team-info">
                                             <div class="our-team-title-holder">
-                                                <h5 class="our-team-name">Bernardo</h5>
+                                                <h5 class="our-team-name">Bernardo Pérez López</h5>
                                             </div>
                                         </div>
                                     </div>
