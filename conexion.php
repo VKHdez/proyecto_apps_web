@@ -11,7 +11,6 @@ function Conectarse()
       echo "Error seleccionando la base de datos.";
       exit();
    }
-   echo"exitoso";
    return $link;
 }
 ?>

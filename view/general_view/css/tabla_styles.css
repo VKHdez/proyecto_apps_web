@@ -2,6 +2,15 @@
 /*
     TABLAS DE APUNTES
 */
+
+.title-container{
+    width: 100%;
+    margin-bottom: 20px;
+
+    color: #333333;
+    text-align: center;
+}
+
 .apuntes-container{
 
     margin-top: 50px;

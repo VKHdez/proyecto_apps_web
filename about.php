@@ -22,21 +22,50 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-                    <a class="navbar-brand" href="#">
-                        <h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>
+                    <?php
+                    if ( isset($_SESSION['usuario'])){
+                        switch ($_SESSION['tipo']){
+                            case 1:
+                                echo "<a class='navbar-brand' href='indexAdministrador.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                break;
+                            case 2:
+                                echo "<a class='navbar-brand' href='indexProfesor.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                break;
+                            case 3:
+                                echo "<a class='navbar-brand' href='indexAlumno.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                break;
+                        }
+                    }else{
+                        echo "<a class='navbar-brand' href='index.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                    }
+                    ?>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                            <li><a href="apuntes.php">Apuntes</a></li>
-                            <li><a href="login.php">Iniciar Sesion</a></li>
-                            <li><a href="registration.php">Registrarse</a></li>
-							<li  class="active"><a href="#">Acerca de</a></li>
+                        <?php
+                        if ( isset($_SESSION['usuario'])){
+                            switch ($_SESSION['tipo']){
+                                case 1:
+                                    echo "<li><a href='apuntesAdministrador.php'>Apuntes</a></li>
+                                              <li><a href='perfilAdministrador.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                    break;
+                                case 2:
+                                    echo "<li><a href='apuntesProfesor.php'>Apuntes</a></li>
+                                              <li><a href='perfilProfesor.php'>Perfil</a></li>";
+                                    break;
+                                case 3:
+                                    echo "<li><a href='apuntes.php'>Apuntes</a></li>
+                                              <li><a href='perfilAlumno.php'>Perfil</a></li>";
+                                    break;
+                            }
+                        }else{
+                            echo "<li><a href='apuntes.php'>Apuntes</a></li>
+                                              <li><a href='login.php'>Iniciar Sesion</a></li>
+                                              <li><a href='registration.php'>Registrarse</a></li>
+							                  <li><a href='about.php'>Acerca de</a></li>";
+                        }
+                        ?>
                         </ul>
                 </div>
                 <!--/.nav-collapse -->

@@ -1,3 +1,5 @@
+<?PHP session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,31 +24,59 @@
 </head>
 
 <body id="wrapper">
-<?PHP session_start(); ?>
+
 <header>
     <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="row">
                 <div class="navbar-header">
 
-                    <a class="navbar-brand" href="apuntes.php">
-                        <h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>
+                    <?php
+                    if ( isset($_SESSION['usuario'])){
+                        switch ($_SESSION['tipo']){
+                            case 1:
+                                echo "<a class='navbar-brand' href='indexAdministrador.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                break;
+                            case 2:
+                                echo "<a class='navbar-brand' href='indexProfesor.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                break;
+                            case 3:
+                                echo "<a class='navbar-brand' href='indexAlumno.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                break;
+                        }
+                    }else{
+                        echo "<a class='navbar-brand' href='index.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                    }
+                    ?>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="apuntes.php">Apuntes</a></li>
 
                         <?php
-
-                        if( isset($_SESSION['usuario']) ){
-                            echo "<li><a href='perfilAlumno.php'>Perfil</a></li>
-							            <li><a href='contact.php'>Contacto</a></li>
-                                        <li><a href='salir.php'>Salir</a></li>";
+                        if ( isset($_SESSION['usuario'])){
+                            switch ($_SESSION['tipo']){
+                                case 1:
+                                    echo "<li><a href='apuntesAdministrador.php'>Apuntes</a></li>
+                                              <li><a href='perfilAdministrador.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                    break;
+                                case 2:
+                                    echo "<li><a href='apuntesProfesor.php'>Apuntes</a></li>
+                                              <li><a href='perfilProfesor.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                    break;
+                                case 3:
+                                    echo "<li><a href='apuntes.php'>Apuntes</a></li>
+                                              <li><a href='perfilAlumno.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                    break;
+                            }
                         }else{
-                            echo "<li><a href='login.php''>Iniciar Sesion</a></li>
-                                          <li><a href='registration.php'>Registrarse</a></li>";
+                            echo "<li><a href='apuntes.php'>Apuntes</a></li>
+                                              <li><a href='login.php'>Iniciar Sesion</a></li>
+                                              <li><a href='registration.php'>Registrarse</a></li>
+							                  <li><a href='about.php'>Acerca de</a></li>";
                         }
-
                         ?>
 
                     </ul>
@@ -112,6 +142,7 @@ agregado lo de abajo php
             pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/combine/npm/pdfjs-dist@2.5.207,npm/pdfjs-dist@2.5.207/build/pdf.worker.min.js";
 
             const doc = await pdfjsLib.getDocument('pdf/'+pdf_apunte).promise;
+            console.log(pdf_apunte);
 
             /*pdfjsLib.getDocument('/pdf/'+pdf_apunte).then(doc => {
                 console.log("Este archivo tiene" +  doc._pdfInfo.numPages + "páginas");

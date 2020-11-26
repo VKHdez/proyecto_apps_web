@@ -1,10 +1,10 @@
 <?PHP session_start();
 	include("conexion.php");
 //obtener los datos del formulario
-  	$nombre=$_REQUEST['nombre'];
-	$apellido=$_REQUEST['apellido'];
-	$correo=$_REQUEST['correo'];
-  	$contrasenia=$_REQUEST['contrasenia'];
+  	$nombre=$_POST['nombre'];
+	$apellido=$_POST['apellido'];
+	$correo=$_POST['correo'];
+  	$contrasenia=$_POST['contrasenia'];
 	$tipo=3;
 //mostrar datos
 /*
@@ -19,7 +19,11 @@
 	$link=Conectarse();
   	mysqli_select_db($link,"apuntesdb");
 	//guardar el registro en la DB 
-    mysqli_query($link,"insert into usuarios (nombre,apellido,correo,contrasenia, tipo) 
-                   values ('$nombre','$apellido','$correo','$contrasenia',$tipo)");
-	
+    mysqli_query($link,"insert into usuarios (nombre,apellido,correo,contrasenia, tipo) values ('$nombre','$apellido','$correo','$contrasenia',$tipo)");
+
+    $_SESSION["usuario"] = $nombre;
+    $_SESSION['tipo']    = $tipo;
+
+    header('Location:indexAlumno.php')
+
 ?>

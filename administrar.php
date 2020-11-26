@@ -1,3 +1,12 @@
+
+<?PHP
+    session_start();
+
+    include("conexion.php");
+    $link=Conectarse();
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -16,46 +25,60 @@
 </head>
 
 <body id="wrapper">
-	<?PHP session_start(); ?>
-    <section id="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-7 col-xs-7 top-header-links">
-                    <ul class="contact_links">
-                        <li><i class="fa fa-phone"></i><a href="#">APLICACIONES WEB</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="#"> BUAP</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5 social">
-
-                </div>
-            </div>
-        </div>
-        </div>
-
-    </section>
 
     <header>
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="row">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-                        <a class="navbar-brand" href="#">
-                            <h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>
+
+                        <?php
+                        if ( isset($_SESSION['usuario'])){
+                            switch ($_SESSION['tipo']){
+                                case 1:
+                                    echo "<a class='navbar-brand' href='indexAdministrador.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                    break;
+                                case 2:
+                                    echo "<a class='navbar-brand' href='indexProfesor.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                    break;
+                                case 3:
+                                    echo "<a class='navbar-brand' href='indexAlumno.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                                    break;
+                            }
+                        }else{
+                            echo "<a class='navbar-brand' href='index.php'><h1>APUNT.ES</h1><span>El aprendizaje sigue</span></a>";
+                        }
+                        ?>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
-                            <li ><a href="indexAdministrador.php">INICIO</a></li>
-                            <li><a href="apuntesAdministrador.php">Apuntes</a></li>
-                            <li class="active"><a href="#">Administración</a></li>
-                            <li><a href="perfilAdministrador.php">Perfil</a></li>
-							              <li><a href="salir.php">Salir</a></li>
+
+                            <?php
+                            if ( isset($_SESSION['usuario'])){
+                                switch ($_SESSION['tipo']){
+                                    case 1:
+                                        echo "<li><a href='apuntesAdministrador.php'>Apuntes</a></li>
+                                              <li><a href='perfilAdministrador.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                        break;
+                                    case 2:
+                                        echo "<li><a href='apuntesProfesor.php'>Apuntes</a></li>
+                                              <li><a href='perfilProfesor.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                        break;
+                                    case 3:
+                                        echo "<li><a href='apuntes.php'>Apuntes</a></li>
+                                              <li><a href='perfilAlumno.php'>Perfil</a></li>
+                                              <li><a href='salir.php'>Salir</a></li>";
+                                        break;
+                                }
+                            }else{
+                                echo "<li><a href='apuntes.php'>Apuntes</a></li>
+                                              <li><a href='login.php'>Iniciar Sesion</a></li>
+                                              <li><a href='registration.php'>Registrarse</a></li>
+							                  <li><a href='about.php'>Acerca de</a></li>";
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -63,30 +86,20 @@
         </nav>
     </header>
 
-    <div id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Left and right controls -->
-
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-        </a>
-
-    </div>
-
-
 	<section id="top_banner">
         <div class="banner">
             <div class="inner text-center">
-                <h2>Administrador: <?php echo $_SESSION["usuario"]; ?></h2>
+
+                <?php
+                    switch ($_SESSION['tipo']){
+                        case 1:
+                            echo "<h2>Administrador: ".$_SESSION["usuario"]."</h2>";
+                            break;
+                        case 2:
+                            echo "<h2>Profesor: ".$_SESSION["usuario"]."</h2>";
+                            break;
+                    }
+                ?>
             </div>
         </div>
     </section>
@@ -95,34 +108,87 @@
 //*****************************************************************************************************
 -->
 <?php
-   include("conexion.php");
-   $link=Conectarse();
+
    //mostrar taba de los usuarios de la base de datos
-   mysqli_select_db($link,"apuntesdb");
-   $result=mysqli_query($link,"select * from usuarios");
-   echo "<br>Agregar Profesores o quitar<br> escriba 2 para profesor<br>escriba 3 para estudiante";
-   echo "<table border=1>";
-   echo "<TR><td> Id Usuario </td><td> nombre </td><td> Apellido </td><td> Correo </td><td> tipo </td><td> Actualizar </td></TR>";
-   echo '<FORM METHOD="POST" ACTION="agregarProfesor.php">';
-     while($row = mysqli_fetch_array($result))
-     {
-        $id=$row['id_usuario'];
-        $nombre=$row['nombre'];
-        $apellido=$row['apellido'];
-        $correo=$row['correo'];
-        $tipo=$row['tipo'];
-        printf ("<TR><td> %s </td><td> %s </td><td> %s </td><td> %s </td>
+    mysqli_select_db($link,"apuntesdb");
+    $result=mysqli_query($link,"select * from apuntes  WHERE id_apuntes='".$_GET['id']."'");
+    while($row = mysqli_fetch_array($result)){
+        $id=$row['id_apuntes'];
+        $materia=$row['materia'];
+        $titulo=$row['titulo'];
+        $resumen=$row['resumen'];
+        $pdf = $row['apunte'];
+        /*printf ("<TR><td> %s </td><td> %s </td><td> %s </td><td> %s </td>
         <td><INPUT TYPE='text' NAME='aux' placeholder='$tipo' SIZE='1'></td><td><a href=\"agregarProfesor.php?aux=%s&id_usuario=%s\">
-        <img src='actualiza.jpg' width='25' height='25' border='0'></a></td></TR>",$id,$nombre,$apellido,$correo,$aux,$id);
-      }
+        <img src='actualiza.jpg' width='25' height='25' border='0'></a></td></TR>",$id,$nombre,$apellido,$correo,$aux,$id);*/
+    }
+
      mysqli_free_result($result);
      mysqli_close($link);
-     echo "</table>";
-     echo'<INPUT TYPE="SUBMIT" value="Actualizar">';
    echo'</FORM>';
 //<INPUT TYPE="SUBMIT" value="Actualizar">
-?>
+    switch ($_SESSION['tipo']){
+        case 3:
+            echo "<h2>NO TIENE PERMITIDO ENTRAR AQUÍ</h2>";
+            break;
+        default:
+            echo " 
+                <section id='login-reg'>
+                    <div class='container'>
+            
+                        <div class='row'>
+                            <div class='col-md-6 col-sm-12 forms-right-icons'>
+            
+                            </div>
+            
+                            <div class='col-md-6 col-sm-12'>
+                                <div class='form-box'>
+                                    <div class='form-top'>
+                                        <div class='form-top-left'>
+                                            <h3>Actualizar Apunte</h3>
+                                            <p>Completa la información de tu Apunte</p>
+                                        </div>
+                                        <div class='form-top-right'>
+                                            <i class='fa fa-pencil'></i>
+                                        </div>
+                                    </div>
+                                    <div class='form-bottom'>
+                                        <form role='form' action='actualizarApunte.php?id=".$_GET['id']."' class='login-form' enctype='multipart/form-data' method='post'> 
+                                        
+                                            <label>MATERIA</label>
+                                            <div class='input-group form-group'>
+                                                
+                                                <span class='input-group-addon' id='basic-addon1'><i class='fa fa-user'></i></span>
+                                                <input type='text' class='form-control' name='materia' placeholder='Materia' aria-describedby='basic-addon1' value='".$materia."'>
+                                            </div>
+                                            
+                                            <label>TITULO</label>
+                                            <div class='input-group form-group'>
+                                                <span class='input-group-addon' id='basic-addon1'><i class='fa fa-user'></i></span>
+                                                <input type='text' class='form-control' name='titulo' placeholder='Titulo' aria-describedby='basic-addon1' value='".$titulo."'>
+                                            </div>
+                                            
+                                            <label>RESUMEN</label>
+                                            <div class='input-group form-group'>
+                                                <textarea name='resumen' id='resumen' cols='75 rows='30'>".$resumen."</textarea>
+                                            </div>
+                                            
+                                            <label>NOTA</label>
+                                            <div class='input-group form-group'>
+                                                <input type='file' name='nota' placeholder='Subir apunte' >
+                                            </div>
+                                            <button type='submit' class='btn' style='margin-bottom: 20px'>ACTUALIZAR APUNTE</button>
+                                            
+                                            <a type='submit' class='btn' style='background-color: orangered' href='eliminarNota.php?id=".$_GET['id']."'>ELIMINAR NOTA</a>                                          
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                </section>";
+            break;
+    }
 
+?>
     <section id="footer">
         <div class="container">
             <div class="row">
@@ -136,33 +202,7 @@
         </div>
 	</section>
 
-    <section id="bottom-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 btm-footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 copyright">
-                    Developed by <a href="#">Aspire Software Solutions</a> designed by <a href="#">Designing Team</a><p> modificado por Bernardo, Carlos y Victor.
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <div id="panel">
-        <div id="panel-admin">
-            <div class="panel-admin-box">
-                <div id="tootlbar_colors">
-                    <button class="color" style="background-color:#1abac8;" onClick="mytheme(0)"></button>
-                    <button class="color" style="background-color:#ff8a00;" onClick="mytheme(1)"> </button>
-                    <button class="color" style="background-color:#b4de50;" onClick="mytheme(2)"> </button>
-                    <button class="color" style="background-color:#e54e53;" onClick="mytheme(3)"> </button>
-                    <button class="color" style="background-color:#1abc9c;" onClick="mytheme(4)"> </button>
-                    <button class="color" style="background-color:#159eee;" onClick="mytheme(5)"> </button>
-                </div>
-            </div>
+<?php
 
-        </div>
-        <a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>
-    </div>
+?>
