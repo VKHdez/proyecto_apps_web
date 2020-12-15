@@ -20,8 +20,117 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28f6ee3a-a9e9-460a-83b9-138a4e2b3370" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/initLoad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/users/usersWelcome_Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/lib/Route.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/lib/core.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accionBuscador.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualiza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualizarApunte.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/administrar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregarProfesor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregarUsuario.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apuntes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apuntesAdministrador.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apuntesProfesor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cerrarSesion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conexion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactoAlumno.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/general_controller/c_menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/features.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/banner-pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/banner-slide-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/banner-slide-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/banner-slide-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/feature_banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/iphone62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/map1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/portfolio-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/team-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/img/user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/portfolio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/registration.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/script/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/scss/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debut/scss/skin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eliminarNota.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/errorSesion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-slide-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-slide-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-slide-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bernardo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/feature_banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/iphone62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/jose_carlo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/map1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/team-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/vk .jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexAdministrador.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexAlumno.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexProfesor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/listarApuntes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/ERD-chismes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/The Clean Coder - A Code of Conduct for Professional.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/comandos-linux.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/comoserhacker.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/grafos.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/compress.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/hash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/scissor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/scissor.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/turn.html4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/turn.html4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/turn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/turn.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/zoom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/lib/zoom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/redesdecomputadoras.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfilAdministrador.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfilAlumno.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfilProfesor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/salir.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scriptApuntesdb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/skin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subirApunte.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validarSesion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validarUsuario.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/verApunte.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/verResumen.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/verResumen2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/general_view/css/main_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/general_view/css/menu_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/general_view/css/normalize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/general_view/css/searchBar_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/general_view/css/tabla_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/general_view/v_menu.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +177,10 @@
       <workItem from="1606252334584" duration="34298000" />
       <workItem from="1606328557154" duration="1003000" />
       <workItem from="1606337027140" duration="26033000" />
-      <workItem from="1606410711911" duration="51000" />
+      <workItem from="1606410711911" duration="735000" />
+      <workItem from="1606778224416" duration="89000" />
+      <workItem from="1607998315360" duration="9761000" />
+      <workItem from="1608056246773" duration="7382000" />
     </task>
     <servers />
   </component>
@@ -95,10 +207,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.-306.1080.1880@0.0.1920.1040" timestamp="1606252567313" />
+    <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608007922565">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="723" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.-306.1080.1890/-1440.174.1440.870@0.0.1920.1050" timestamp="1608007922565" />
     <state x="995" y="287" key="FileChooserDialogImpl" timestamp="1606004880279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="995" y="287" key="FileChooserDialogImpl/0.0.1920.1040/1920.-306.1080.1880@0.0.1920.1040" timestamp="1606004880279" />
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1608007828277">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050/1920.-306.1080.1890/-1440.174.1440.870@0.0.1920.1050" timestamp="1608007828277" />
     <state x="716" y="191" key="SettingsEditor" timestamp="1606005045382">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
